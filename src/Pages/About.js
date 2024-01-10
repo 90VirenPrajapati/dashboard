@@ -7,6 +7,7 @@ import LineChart from "../components/LineChart";
 import PieChart from "../components/PieChart";
 import ScatterCharts from "../components/ScatterChart";
 import Line from "../components/Line";
+import AnimationChart from "../components/AnimationChart";
 
 const About = () => {
     return (
@@ -21,21 +22,13 @@ const About = () => {
                                     <Grid item xs={8}>
                                         <Stack spacing={2}>
                                             <PieChart/>
-                                            <Card className='paddingall' elevation={3}
-                                                  sx={{minWidth: 49 + '%', height: 140}}>
-                                                <CardContent>
-                                                    <div>
-                                                        <span className='pricetitle'> $203K </span><br/>
-                                                        <span className='pricesubtitle'> Total Income </span>
-                                                    </div>
-                                                </CardContent>
-                                            </Card>
+                                            <ScatterCharts/>
                                         </Stack>
                                     </Grid>
                                     <Grid item xs={4}>
                                         <Stack spacing={2}>
                                             <Card sx={{maxWidth: 500}}>
-                                                <ScatterCharts/>
+                                                <AnimationChart/>
                                             </Card>
                                         </Stack>
                                     </Grid>
