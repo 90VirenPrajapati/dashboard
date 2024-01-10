@@ -19,8 +19,8 @@ const AddProduct = ({closeEvent}) => {
 
     const empCollectionRef = collection(db, 'products')
     const createUser = async () => {
-        await addDoc (empCollectionRef, {
-            name:name,
+        await addDoc(empCollectionRef, {
+            name: name,
             price: Number(price),
             category: category,
             date: String(new Date())
@@ -68,34 +68,27 @@ const AddProduct = ({closeEvent}) => {
             <Typography variant='h5' align='center'>
                 Add Products
             </Typography>
-            <IconButton style={{position: 'absolute', top: '0', right: '0'}}
-                        onClick={closeEvent}>
+            <IconButton style={{position: 'absolute', top: '0', right: '0'}} onClick={closeEvent}>
                 <CloseIcon/>
             </IconButton>
             <Box height={20}/>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <TextField id="outlined-basic" label="Name" variant="outlined" size='small'
-                               sx={{minWidth: '100%'}}
-                               value={name}
-                               onChange={handleNameChange}
-                    />
+                    <TextField label="Name" variant="outlined" size='small' sx={{minWidth: '100%'}} value={name} onChange={handleNameChange}/>
                 </Grid>
                 <Grid item xs={6}>
                     <TextField id="outlined-basic" label="Price" variant="outlined" size='small'
                                type='number'
                                sx={{minWidth: '100%'}}
                                value={price}
-                               onChange={handlePriceChange}
-                    />
+                               onChange={handlePriceChange}/>
                 </Grid>
                 <Grid item xs={6}>
                     <TextField id="outlined-basic" label="Category" variant="outlined" size='small'
                                select
                                sx={{minWidth: '100%'}}
                                value={category}
-                               onChange={handleCategoryChange}
-                    >
+                               onChange={handleCategoryChange}>
                         {currencies.map((option) => (
                             <option key={option.value} value={option.value}>
                                 {option.label}

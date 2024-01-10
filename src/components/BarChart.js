@@ -9,6 +9,15 @@ export const data = [
     ["2017", 1030, 540, 350],
 ];
 
+export const dataset = [
+    ["Year", "Sales", "Expenses", "Profit"],
+    ["2014", 100, 400, 200],
+    ["2015", 110, 460, 250],
+    ["2016", 660, 1120, 300],
+    ["2017", 103, 540, 350],
+];
+
+
 export const options = {
     chart: {
         title: "Company Performance",

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import {styled, useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
@@ -42,7 +42,7 @@ const closedMixin = (theme) => ({
     },
 });
 
-const DrawerHeader = styled('div')(({ theme }) => ({
+const DrawerHeader = styled('div')(({theme}) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
@@ -53,7 +53,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
+})(({theme, open}) => ({
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
         easing: theme.transitions.easing.sharp,
@@ -69,8 +69,8 @@ const AppBar = styled(MuiAppBar, {
     }),
 }));
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
+const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})(
+    ({theme, open}) => ({
         width: drawerWidth,
         flexShrink: 0,
         whiteSpace: 'nowrap',
@@ -101,8 +101,8 @@ export default function Sidebar() {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
+        <Box sx={{display: 'flex'}}>
+            <CssBaseline/>
             <AppBar position="fixed" open={open}>
                 <Toolbar>
                     <IconButton
@@ -110,12 +110,9 @@ export default function Sidebar() {
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
                         edge="start"
-                        sx={{
-                            marginRight: 5,
-                            ...(open && { display: 'none' }),
-                        }}
-                    >
-                        <MenuIcon />
+                        sx={{marginRight: 5,
+                            ...(open && {display: 'none'})}}>
+                        <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
                         Mini variant drawer
@@ -125,54 +122,35 @@ export default function Sidebar() {
             <Drawer variant="permanent" open={open}>
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                        {theme.direction === 'rtl' ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
                     </IconButton>
                 </DrawerHeader>
-                <Divider />
+                <Divider/>
                 <List>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=> {navigate('/')}}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <HomeIcon sx={{margin:'10px'}}/>
-                            <ListItemText primary='Home' sx={{ opacity: open ? 1 : 0 }} />
+                    <ListItem disablePadding sx={{display: 'block'}} onClick={() => {navigate('/')}}>
+                        <ListItemButton sx={{minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5}}>
+                            <HomeIcon sx={{margin: '10px'}}/>
+                            <ListItemText primary='Home' sx={{opacity: open ? 1 : 0}}/>
                         </ListItemButton>
                     </ListItem>
                 </List>
-                <Divider />
+                <Divider/>
                 <List>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=> {navigate('/about')}}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <InfoIcon sx={{margin:'10px'}}/>
-                            <ListItemText primary='About' sx={{ opacity: open ? 1 : 0 }} />
+                    <ListItem disablePadding sx={{display: 'block'}} onClick={() => {navigate('/about')}}>
+                        <ListItemButton sx={{minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5}}>
+                            <InfoIcon sx={{margin: '10px'}}/>
+                            <ListItemText primary='About' sx={{opacity: open ? 1 : 0}}/>
                         </ListItemButton>
                     </ListItem>
                 </List>
                 <List>
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={()=> {navigate('/product')}}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <InfoIcon sx={{margin:'10px'}}/>
-                            <ListItemText primary='Product' sx={{ opacity: open ? 1 : 0 }} />
+                    <ListItem disablePadding sx={{display: 'block'}} onClick={() => {navigate('/product')}}>
+                        <ListItemButton sx={{minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5}}>
+                            <InfoIcon sx={{margin: '10px'}}/>
+                            <ListItemText primary='Product' sx={{opacity: open ? 1 : 0}}/>
                         </ListItemButton>
                     </ListItem>
                 </List>
             </Drawer>
         </Box>
-    );
-}
+    )}

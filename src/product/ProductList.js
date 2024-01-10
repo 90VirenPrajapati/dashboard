@@ -152,34 +152,30 @@ export default function ProductList() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {rows
-                                .map((row) => {
-                                    return (
-                                        <TableRow hover role="checkbox" tabIndex={-1}>
-                                            <TableCell key={row.id} align={row.align}>
-                                                {row.name}
-                                            </TableCell>
-                                            <TableCell key={row.id} align={row.align}>
-                                                {row.price}
-                                            </TableCell>
-                                            <TableCell key={row.id} align={row.align}>
-                                                {row.category}
-                                            </TableCell>
-                                            <TableCell key={row.id} align={row.align}>
-                                                {row.date}
-                                            </TableCell>
-                                            <TableCell align='left'>
-                                                <Stack spacing={2} direction='row'>
-                                                    <EditIcon sx={{fontSize: '20px', color: 'blue'}}
-                                                    />
-                                                    <DeleteIcon sx={{fontSize: '20px', color: 'red'}}
-                                                                onClick={() => deleteUser(row.id)}
-                                                    />
-                                                </Stack>
-                                            </TableCell>
-                                        </TableRow>
-                                    );
-                                })}
+                            {rows.map((row) => {
+                                return (
+                                    <TableRow hover role="checkbox" tabIndex={-1}>
+                                        <TableCell key={row.id} align={row.align}>
+                                            {row.name}
+                                        </TableCell>
+                                        <TableCell key={row.id} align={row.align}>
+                                            {row.price}
+                                        </TableCell>
+                                        <TableCell key={row.id} align={row.align}>
+                                            {row.category}
+                                        </TableCell>
+                                        <TableCell key={row.id} align={row.align}>
+                                            {row.date}
+                                        </TableCell>
+                                        <TableCell align='left'>
+                                            <Stack spacing={2} direction='row'>
+                                                <EditIcon sx={{fontSize: '20px', color: 'blue'}}/>
+                                                <DeleteIcon sx={{fontSize: '20px', color: 'red'}} onClick={() => deleteUser(row.id)}/>
+                                            </Stack>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
                         </TableBody>
                     </Table>
                 </TableContainer>
@@ -190,10 +186,8 @@ export default function ProductList() {
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                />
+                    onRowsPerPageChange={handleChangeRowsPerPage}/>
             </Paper>
         </>
     )
-
 }
