@@ -170,7 +170,8 @@ export default function ProductList() {
                                         <TableCell align='left'>
                                             <Stack spacing={2} direction='row'>
                                                 <EditIcon sx={{fontSize: '20px', color: 'blue'}}/>
-                                                <DeleteIcon sx={{fontSize: '20px', color: 'red'}} onClick={() => deleteUser(row.id)}/>
+                                                <DeleteIcon sx={{fontSize: '20px', color: 'red'}}
+                                                            onClick={() => deleteUser(row.id)}/>
                                             </Stack>
                                         </TableCell>
                                     </TableRow>

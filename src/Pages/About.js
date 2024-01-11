@@ -8,6 +8,7 @@ import PieChart from "../components/PieChart";
 import ScatterCharts from "../components/ScatterChart";
 import Line from "../components/Line";
 import AnimationChart from "../components/AnimationChart";
+import {BubbleChart} from "../components/BubbleChart";
 
 const About = () => {
     return (
@@ -22,7 +23,10 @@ const About = () => {
                                     <Grid item xs={8}>
                                         <Stack spacing={2}>
                                             <PieChart/>
-                                            <ScatterCharts/>
+                                            <Box sx={{display:'flex', gap: 5}}>
+                                                <ScatterCharts/>
+                                                <BubbleChart/>
+                                            </Box>
                                         </Stack>
                                     </Grid>
                                     <Grid item xs={4}>

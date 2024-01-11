@@ -23,7 +23,7 @@ export default function ScatterCharts() {
     return (
         <Chart
             chartType="ScatterChart"
-            width="70%"
+            width="100%"
             height="400px"
             data={data}
             options={options}
